@@ -1,0 +1,62 @@
+[
+  {
+    "sku_id": "BEV-COC-750",
+    "sku_name": "Coca-Cola Soft Drink PET Bottle 750ml",
+    "category": "Beverages",
+    "uom": "ml"
+  },
+  {
+    "sku_id": "BEV-COCZ-750",
+    "sku_name": "Coca-Cola Zero Sugar Soft Drink PET Bottle 750ml",
+    "category": "Beverages",
+    "uom": "ml"
+  },
+  {
+    "sku_id": "BEV-THUMSUP-750",
+    "sku_name": "Thums Up Soft Drink PET Bottle 750ml",
+    "category": "Beverages",
+    "uom": "ml"
+  },
+  {
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "sku_name": "Lay’s Potato Chips Classic Salted 52g Pouch",
+    "category": "Snacks",
+    "uom": "g"
+  },
+  {
+    "sku_id": "INST-MAGGI-MAS-70",
+    "sku_name": "MAGGI 2-Minute Masala Instant Noodles 70g Pouch",
+    "category": "Instant Foods",
+    "uom": "g"
+  },
+  {
+    "sku_id": "INST-MAGGI-SPC-70",
+    "sku_name": "MAGGI Special Masala Instant Noodles 70g Pouch",
+    "category": "Instant Foods",
+    "uom": "g"
+  },
+  {
+    "sku_id": "CONF-SILK-PLN-60",
+    "sku_name": "Cadbury Dairy Milk Silk Chocolate Bar 60g",
+    "category": "Confectionery",
+    "uom": "g"
+  },
+  {
+    "sku_id": "CONF-SILK-HAZ-58",
+    "sku_name": "Cadbury Dairy Milk Silk Hazelnut Chocolate Bar 58g",
+    "category": "Confectionery",
+    "uom": "g"
+  },
+  {
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "sku_name": "Samsung 25W USB-C Travel Adapter",
+    "category": "Electronics",
+    "uom": "piece"
+  },
+  {
+    "sku_id": "ELEC-SAM-25W-CBL",
+    "sku_name": "Samsung 25W Super Fast Charger with USB-C Cable",
+    "category": "Electronics",
+    "uom": "piece"
+  }
+]

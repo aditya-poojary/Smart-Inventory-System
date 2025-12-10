@@ -1,0 +1,72 @@
+[
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "store_name": "Delhi NCR Central Fresh Store",
+    "city": "Delhi NCR",
+    "region": "North",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "store_name": "Jaipur Pink City Fresh Store",
+    "city": "Jaipur",
+    "region": "North",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "store_name": "Ahmedabad City Fresh Store",
+    "city": "Ahmedabad",
+    "region": "West",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "store_name": "Kolkata Metro Fresh Store",
+    "city": "Kolkata",
+    "region": "East",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "store_name": "Pune City Fresh Store",
+    "city": "Pune",
+    "region": "West",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_MUMBAI_01",
+    "store_name": "Mumbai Central Fresh Store",
+    "city": "Mumbai",
+    "region": "West",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_THANE_01",
+    "store_name": "Thane Suburban Fresh Store",
+    "city": "Thane",
+    "region": "West",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_BANGALORE_01",
+    "store_name": "Bangalore City Fresh Store",
+    "city": "Bangalore",
+    "region": "South",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_HYDERABAD_01",
+    "store_name": "Hyderabad Metro Fresh Store",
+    "city": "Hyderabad",
+    "region": "South",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  },
+  {
+    "store_id": "STORE_CHENNAI_01",
+    "store_name": "Chennai City Fresh Store",
+    "city": "Chennai",
+    "region": "South",
+    "source_url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=G6K5JRE64PMCDR2Z"
+  }
+]

@@ -1,0 +1,406 @@
+[
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "BEV-COC-750",
+    "on_hand_qty": 84,
+    "safety_stock": 60,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "BEV-COCZ-750",
+    "on_hand_qty": 48,
+    "safety_stock": 40,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "on_hand_qty": 60,
+    "safety_stock": 50,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "on_hand_qty": 24,
+    "safety_stock": 30,
+    "reorder_multiple": 24,
+    "vendor_email": "snacks-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "on_hand_qty": 60,
+    "safety_stock": 45,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "on_hand_qty": 30,
+    "safety_stock": 40,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "CONF-SILK-PLN-60",
+    "on_hand_qty": 40,
+    "safety_stock": 35,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "CONF-SILK-HAZ-58",
+    "on_hand_qty": 20,
+    "safety_stock": 25,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "on_hand_qty": 15,
+    "safety_stock": 10,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "ELEC-SAM-25W-CBL",
+    "on_hand_qty": 10,
+    "safety_stock": 15,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "BEV-COC-750",
+    "on_hand_qty": 72,
+    "safety_stock": 60,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "BEV-COCZ-750",
+    "on_hand_qty": 36,
+    "safety_stock": 40,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "on_hand_qty": 48,
+    "safety_stock": 50,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "on_hand_qty": 24,
+    "safety_stock": 30,
+    "reorder_multiple": 24,
+    "vendor_email": "snacks-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "on_hand_qty": 45,
+    "safety_stock": 45,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "on_hand_qty": 30,
+    "safety_stock": 40,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "CONF-SILK-PLN-60",
+    "on_hand_qty": 40,
+    "safety_stock": 35,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "CONF-SILK-HAZ-58",
+    "on_hand_qty": 20,
+    "safety_stock": 25,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "on_hand_qty": 10,
+    "safety_stock": 10,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_JAIPUR_01",
+    "sku_id": "ELEC-SAM-25W-CBL",
+    "on_hand_qty": 15,
+    "safety_stock": 15,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "BEV-COC-750",
+    "on_hand_qty": 96,
+    "safety_stock": 60,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "BEV-COCZ-750",
+    "on_hand_qty": 60,
+    "safety_stock": 40,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "on_hand_qty": 72,
+    "safety_stock": 50,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "on_hand_qty": 24,
+    "safety_stock": 30,
+    "reorder_multiple": 24,
+    "vendor_email": "snacks-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "on_hand_qty": 60,
+    "safety_stock": 45,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "on_hand_qty": 60,
+    "safety_stock": 40,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "CONF-SILK-PLN-60",
+    "on_hand_qty": 40,
+    "safety_stock": 35,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "CONF-SILK-HAZ-58",
+    "on_hand_qty": 20,
+    "safety_stock": 25,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "on_hand_qty": 20,
+    "safety_stock": 10,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "ELEC-SAM-25W-CBL",
+    "on_hand_qty": 10,
+    "safety_stock": 15,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "BEV-COC-750",
+    "on_hand_qty": 60,
+    "safety_stock": 60,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "BEV-COCZ-750",
+    "on_hand_qty": 36,
+    "safety_stock": 40,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "on_hand_qty": 48,
+    "safety_stock": 50,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "on_hand_qty": 24,
+    "safety_stock": 30,
+    "reorder_multiple": 24,
+    "vendor_email": "snacks-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "on_hand_qty": 45,
+    "safety_stock": 45,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "on_hand_qty": 30,
+    "safety_stock": 40,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "CONF-SILK-PLN-60",
+    "on_hand_qty": 40,
+    "safety_stock": 35,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "CONF-SILK-HAZ-58",
+    "on_hand_qty": 20,
+    "safety_stock": 25,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "on_hand_qty": 15,
+    "safety_stock": 10,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_KOLKATA_01",
+    "sku_id": "ELEC-SAM-25W-CBL",
+    "on_hand_qty": 10,
+    "safety_stock": 15,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "BEV-COC-750",
+    "on_hand_qty": 96,
+    "safety_stock": 60,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "BEV-COCZ-750",
+    "on_hand_qty": 60,
+    "safety_stock": 40,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "on_hand_qty": 72,
+    "safety_stock": 50,
+    "reorder_multiple": 12,
+    "vendor_email": "beverages-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "on_hand_qty": 24,
+    "safety_stock": 30,
+    "reorder_multiple": 24,
+    "vendor_email": "snacks-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "on_hand_qty": 60,
+    "safety_stock": 45,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "on_hand_qty": 60,
+    "safety_stock": 40,
+    "reorder_multiple": 30,
+    "vendor_email": "staples-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "CONF-SILK-PLN-60",
+    "on_hand_qty": 40,
+    "safety_stock": 35,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "CONF-SILK-HAZ-58",
+    "on_hand_qty": 20,
+    "safety_stock": 25,
+    "reorder_multiple": 20,
+    "vendor_email": "confectionery-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "on_hand_qty": 20,
+    "safety_stock": 10,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  },
+  {
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "ELEC-SAM-25W-CBL",
+    "on_hand_qty": 10,
+    "safety_stock": 15,
+    "reorder_multiple": 5,
+    "vendor_email": "electronics-vendor@wholesale.com"
+  }
+]

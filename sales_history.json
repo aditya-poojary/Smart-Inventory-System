@@ -1,0 +1,547 @@
+[
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "BEV-COC-750",
+    "units_sold": 3,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE-JAIPUR-OI",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 5,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 7,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_KOLKATA-OI",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 9,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 11,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_MUMBAI_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 13,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_THANE_01",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 15,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_BANGALORE_01",
+    "sku_id": "CONF-SlLK-HAZ-58",
+    "units_sold": 17,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_HYDERABAD_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "units_sold": 19,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_CHENNAI_01",
+    "sku_id": "BEV-COC-750",
+    "units_sold": 21,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE-THANE_OI",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 23,
+    "updated_at": "2025-11-26T09:00:00+05:30"
+  },
+
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 4,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE-JAIPUR-OI",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 6,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 8,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_KOLKATA-OI",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 10,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 12,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_MUMBAI_01",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 14,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_THANE_01",
+    "sku_id": "CONF-SlLK-HAZ-58",
+    "units_sold": 16,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_BANGALORE_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "units_sold": 18,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_HYDERABAD_01",
+    "sku_id": "BEV-COC-750",
+    "units_sold": 20,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_CHENNAI_01",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 22,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE-THANE_OI",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 24,
+    "updated_at": "2025-11-27T09:00:00+05:30"
+  },
+
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 5,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE-JAIPUR-OI",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 7,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 9,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_KOLKATA-OI",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 11,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 13,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_MUMBAI_01",
+    "sku_id": "CONF-SlLK-HAZ-58",
+    "units_sold": 15,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_THANE_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "units_sold": 17,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_BANGALORE_01",
+    "sku_id": "BEV-COC-750",
+    "units_sold": 19,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_HYDERABAD_01",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 21,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_CHENNAI_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 23,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE-THANE_OI",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 25,
+    "updated_at": "2025-11-28T09:00:00+05:30"
+  },
+
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 6,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE-JAIPUR-OI",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 8,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 10,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_KOLKATA-OI",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 12,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "CONF-SlLK-HAZ-58",
+    "units_sold": 14,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_MUMBAI_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "units_sold": 16,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_THANE_01",
+    "sku_id": "BEV-COC-750",
+    "units_sold": 18,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_BANGALORE_01",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 20,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_HYDERABAD_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 22,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_CHENNAI_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 24,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE-THANE_OI",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 1,
+    "updated_at": "2025-11-29T09:00:00+05:30"
+  },
+
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 7,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE-JAIPUR-OI",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 9,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 11,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_KOLKATA-OI",
+    "sku_id": "CONF-SlLK-HAZ-58",
+    "units_sold": 13,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "units_sold": 15,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_MUMBAI_01",
+    "sku_id": "BEV-COC-750",
+    "units_sold": 17,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_THANE_01",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 19,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_BANGALORE_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 21,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_HYDERABAD_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 23,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_CHENNAI_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 25,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE-THANE_OI",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 2,
+    "updated_at": "2025-11-30T09:00:00+05:30"
+  },
+
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 8,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE-JAIPUR-OI",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 10,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "CONF-SlLK-HAZ-58",
+    "units_sold": 12,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_KOLKATA-OI",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "units_sold": 14,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "BEV-COC-750",
+    "units_sold": 16,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_MUMBAI_01",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 18,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_THANE_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 20,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_BANGALORE_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 22,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_HYDERABAD_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 24,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_CHENNAI_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 26,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE-THANE_OI",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 3,
+    "updated_at": "2025-12-01T09:00:00+05:30"
+  },
+
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_DELHI_NCR_01",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 9,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE-JAIPUR-OI",
+    "sku_id": "CONF-SlLK-HAZ-58",
+    "units_sold": 11,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_AHMEDABAD_01",
+    "sku_id": "ELEC-SAM-25W-ADAPT",
+    "units_sold": 13,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_KOLKATA-OI",
+    "sku_id": "BEV-COC-750",
+    "units_sold": 15,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_PUNE_01",
+    "sku_id": "BEV-COCZ-750",
+    "units_sold": 17,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_MUMBAI_01",
+    "sku_id": "BEV-THUMSUP-750",
+    "units_sold": 19,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_THANE_01",
+    "sku_id": "SNK-LAYS-CLSC-52",
+    "units_sold": 21,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_BANGALORE_01",
+    "sku_id": "INST-MAGGI-MAS-70",
+    "units_sold": 23,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_HYDERABAD_01",
+    "sku_id": "INST-MAGGI-SPC-70",
+    "units_sold": 25,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_CHENNAI_01",
+    "sku_id": "CONF-SlLK-PLN-60",
+    "units_sold": 6,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE-THANE_OI",
+    "sku_id": "CONF-SlLK-HAZ-58",
+    "units_sold": 14,
+    "updated_at": "2025-12-02T09:00:00+05:30"
+  }
+]

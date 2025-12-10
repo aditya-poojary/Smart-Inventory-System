@@ -1,0 +1,547 @@
+[
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_DELHI_NCR_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE-JAIPUR-OI",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_AHMEDABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 1
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_KOLKATA-OI",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_PUNE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_MUMBAI_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_THANE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_BANGALORE_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_HYDERABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE_CHENNAI_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 1
+  },
+  {
+    "date": "2025-11-25",
+    "store_id": "STORE-THANE_OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_DELHI_NCR_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE-JAIPUR-OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_AHMEDABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_KOLKATA-OI",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_PUNE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 1
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_MUMBAI_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_THANE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_BANGALORE_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_HYDERABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE_CHENNAI_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-26",
+    "store_id": "STORE-THANE_OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_DELHI_NCR_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE-JAIPUR-OI",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_AHMEDABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_KOLKATA-OI",
+    "weather_code": "RAIN",
+    "is_holiday": 1,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_PUNE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_MUMBAI_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_THANE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 1
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_BANGALORE_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_HYDERABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE_CHENNAI_01",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-27",
+    "store_id": "STORE-THANE_OI",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_DELHI_NCR_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE-JAIPUR-OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_AHMEDABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_KOLKATA-OI",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_PUNE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_MUMBAI_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_THANE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_BANGALORE_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_HYDERABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE_CHENNAI_01",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-28",
+    "store_id": "STORE-THANE_OI",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_DELHI_NCR_01",
+    "weather_code": "RAIN",
+    "is_holiday": 1,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE-JAIPUR-OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_AHMEDABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_KOLKATA-OI",
+    "weather_code": "RAIN",
+    "is_holiday": 1,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_PUNE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 1
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_MUMBAI_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_THANE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_BANGALORE_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_HYDERABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE_CHENNAI_01",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-29",
+    "store_id": "STORE-THANE_OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_DELHI_NCR_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE-JAIPUR-OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_AHMEDABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_KOLKATA-OI",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_PUNE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_MUMBAI_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_THANE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_BANGALORE_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_HYDERABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 1
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE_CHENNAI_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-11-30",
+    "store_id": "STORE-THANE_OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_DELHI_NCR_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE-JAIPUR-OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_AHMEDABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_KOLKATA-OI",
+    "weather_code": "RAIN",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_PUNE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_MUMBAI_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_THANE_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_BANGALORE_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_HYDERABAD_01",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE_CHENNAI_01",
+    "weather_code": "CLOUDY",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  },
+  {
+    "date": "2025-12-01",
+    "store_id": "STORE-THANE_OI",
+    "weather_code": "HOT",
+    "is_holiday": 0,
+    "promotion_flag": 0
+  }
+]

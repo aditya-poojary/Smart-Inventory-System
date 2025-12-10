@@ -1,0 +1,603 @@
+{
+  "meta": {},
+  "name": "A_sales_signals_sync",
+  "description": "Hour 2 — Daily ingest of sales CSV/Sheet, enrich with weather/holiday, upsert into sales_history & external_signals. Idempotent, with error branch and verification.",
+  "active": true,
+  "version": "0.0.1",
+  "status": "draft",
+  "source": "boltic",
+  "parent_id": "",
+  "global_variables": {
+    "TIMEZONE": "Asia/Kolkata",
+    "WEATHER_API_KEY_SECRET": "09ad74212e5143354ce5b5c289bfa15d",
+    "WEATHER_API_URL": "https://api.openweathermap.org/data/2.5/forecast",
+    "HOLIDAYS_SHEET_ID": "secrets:HOLIDAYS_SHEET_ID",
+    "PROMOS_SHEET_ID": "secrets:PROMOS_SHEET_ID",
+    "ERRORS_SHEET_ID": "secrets:STAGING_ERRORS_SHEET_ID",
+    "BATCH_SIZE": 500
+  },
+  "retry_config": {
+    "initial_interval": 1000,
+    "maximum_attempts": 3,
+    "maximum_interval": 100000,
+    "backoff_coefficient": 2
+  },
+  "nodes": [
+    {
+      "id": "scheduleWorkflow1",
+      "type": "trigger",
+      "position": { "x": 160, "y": 120 },
+      "data": {
+        "name": "Schedule Workflow",
+        "type": "schedule",
+        "properties": {
+          "spec": {
+            "timezone": "Asia/Kolkata",
+            "cron_expressions": ["0 1 * * *"],
+            "intervals": []
+          },
+          "test_payload": {},
+          "integration_slug": "blt-int.schedule-workflow"
+        },
+        "blt_node_states": {
+          "node": "completed",
+          "test": "completed",
+          "setup_and_configure": "completed"
+        }
+      },
+      "incomingPorts": [],
+      "outgoingPorts": ["out_schedule_to_source"]
+    },
+
+    {
+      "id": "readSource1",
+      "type": "normal",
+      "position": { "x": 420, "y": 120 },
+      "data": {
+        "type": "readSource",
+        "name": "Read Sales Source (sheet/csv/db)",
+        "properties": {
+          "mode_hint": "sheet_or_csv_or_db",
+          "preferred_option": "read-sheet",
+          "options": {
+            "read_sheet": {
+              "integration_slug": "blt-int.read-sheet",
+              "sheet_id_secret": "{{HOLIDAYS_SHEET_ID}}",
+              "sheet_range": "Sales!A:D",
+              "header_row": true
+            },
+            "read_csv": {
+              "integration_slug": "blt-int.read-csv",
+              "s3_path": "",
+              "has_header": true,
+              "delimiter": ","
+            },
+            "db_query": {
+              "integration_slug": "blt-int.db-query",
+              "query": "SELECT date::date as date, store_id, sku_id, SUM(units) as units_sold FROM raw_sales_table WHERE date >= CURRENT_DATE - INTERVAL '7 day' GROUP BY date::date, store_id, sku_id;"
+            }
+          },
+          "maximum_timeout": 120000,
+          "integration_slug": "blt-int.read-source"
+        },
+        "blt_node_states": {
+          "node": "not-configured-yet",
+          "setup_and_configure": "default"
+        }
+      },
+      "incomingPorts": ["in_schedule_to_source"],
+      "outgoingPorts": ["out_source_to_mapper"]
+    },
+
+    {
+      "id": "mapper_normalize",
+      "type": "normal",
+      "position": { "x": 700, "y": 120 },
+      "data": {
+        "type": "mapper",
+        "name": "Mapper / Normalize & Validate",
+        "properties": {
+          "json": {
+            "script_language": "javascript",
+            "script": "// Mapper: normalize fields, validate formats\n// Input row fields: date, sale_date, timestamp, store, storeCode, sku, productSKU, units, quantity\ntry {\n  let raw = input; // input is the row object\n  // date normalization\n  let d = raw.date || raw.sale_date || raw.timestamp;\n  let dt = new Date(d);\n  let isoDate = isNaN(dt.getTime()) ? null : dt.toISOString().slice(0,10);\n\n  // normalize ids\n  let store_id = (raw.store_id || raw.store || raw.storeCode || '').toString().trim();\n  let sku_id = (raw.sku_id || raw.sku || raw.productSKU || '').toString().trim();\n  store_id = store_id === '' ? null : store_id;\n  sku_id = sku_id === '' ? null : sku_id;\n\n  let units = Number(raw.units_sold || raw.units || raw.quantity || 0);\n  if (isNaN(units)) units = 0;\n\n  // prepare normalized record\n  let out = { date: isoDate, store_id: store_id, sku_id: sku_id, units_sold: units };\n\n  // basic validations — let bad rows be returned with _error\n  let errors = [];\n  if (!isoDate) errors.push('bad_date');\n  if (!store_id) errors.push('missing_store_id');\n  if (!sku_id) errors.push('missing_sku_id');\n\n  if (errors.length) {\n    out._error = errors.join('|');\n    out._raw = raw;\n  }\n\n  return out;\n} catch(e) {\n  return { _error: 'mapper_exception', _raw: input };\n}",
+            "output_field": "mapped_rows"
+          },
+          "maximum_timeout": 60000,
+          "continue_on_failure": false,
+          "integration_slug": "blt-int.mapper"
+        },
+        "blt_node_states": {
+          "node": "not-configured-yet",
+          "setup_and_configure": "default"
+        }
+      },
+      "incomingPorts": ["in_source_to_mapper"],
+      "outgoingPorts": ["out_mapper_to_split"]
+    },
+
+    {
+      "id": "splitCleanBad",
+      "type": "normal",
+      "position": { "x": 980, "y": 120 },
+      "data": {
+        "type": "splitter",
+        "name": "Split Clean vs Bad Rows",
+        "properties": {
+          "condition_expression": "row._error == null || row._error == ''",
+          "integration_slug": "blt-int.split"
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_mapper_to_split"],
+      "outgoingPorts": ["out_split_to_lookup_valid", "out_split_to_errors"]
+    },
+
+    {
+      "id": "stagingErrorsSheet",
+      "type": "normal",
+      "position": { "x": 1260, "y": 40 },
+      "data": {
+        "type": "writeSheet",
+        "name": "Write Bad Rows to staging_errors sheet",
+        "properties": {
+          "integration_slug": "blt-int.write-sheet",
+          "sheet_id_secret": "{{ERRORS_SHEET_ID}}",
+          "sheet_range": "staging_errors!A1",
+          "write_mode": "append",
+          "columns": [
+            "date",
+            "store_id",
+            "sku_id",
+            "units_sold",
+            "_error",
+            "_raw"
+          ]
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_split_to_errors"],
+      "outgoingPorts": ["out_errors_to_end"]
+    },
+
+    {
+      "id": "lookupStores",
+      "type": "normal",
+      "position": { "x": 1260, "y": 120 },
+      "data": {
+        "type": "tables_select",
+        "name": "Lookup store_master (validate stores)",
+        "properties": {
+          "integration_slug": "blt-int.tables",
+          "query_type": "select",
+          "sql": "SELECT store_id FROM store_master WHERE store_id IN (:distinct_store_ids)",
+          "params": {
+            "distinct_store_ids": "{{mapped_rows | map(attribute='store_id') | unique }}"
+          },
+          "maximum_timeout": 60000
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_split_to_lookup_valid"],
+      "outgoingPorts": [
+        "out_lookupStores_to_lookupSkus",
+        "out_lookupStores_to_badStores"
+      ]
+    },
+
+    {
+      "id": "lookupSkus",
+      "type": "normal",
+      "position": { "x": 1530, "y": 120 },
+      "data": {
+        "type": "tables_select",
+        "name": "Lookup sku_master (validate skus)",
+        "properties": {
+          "integration_slug": "blt-int.tables",
+          "query_type": "select",
+          "sql": "SELECT sku_id FROM sku_master WHERE sku_id IN (:distinct_sku_ids)",
+          "params": {
+            "distinct_sku_ids": "{{mapped_rows | map(attribute='sku_id') | unique }}"
+          },
+          "maximum_timeout": 60000
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_lookupStores_to_lookupSkus"],
+      "outgoingPorts": [
+        "out_lookupSkus_to_prepare_upsert",
+        "out_lookupSkus_to_badSkus"
+      ]
+    },
+
+    {
+      "id": "badKeysToErrors",
+      "type": "normal",
+      "position": { "x": 1260, "y": 220 },
+      "data": {
+        "type": "writeSheet",
+        "name": "Write missing store/sku keys to errors sheet",
+        "properties": {
+          "integration_slug": "blt-int.write-sheet",
+          "sheet_id_secret": "{{ERRORS_SHEET_ID}}",
+          "sheet_range": "staging_errors!A1",
+          "write_mode": "append",
+          "columns": ["date", "store_id", "sku_id", "issue"]
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": [
+        "in_lookupStores_to_badStores",
+        "in_lookupSkus_to_badSkus"
+      ],
+      "outgoingPorts": ["out_badKeys_to_end"]
+    },
+
+    {
+      "id": "tablesUpsertSales",
+      "type": "normal",
+      "position": { "x": 1820, "y": 120 },
+      "data": {
+        "type": "tables_upsert",
+        "name": "Upsert into sales_history",
+        "properties": {
+          "integration_slug": "blt-int.tables",
+          "table": "sales_history",
+          "mode": "upsert",
+          "conflict_keys": ["date", "store_id", "sku_id"],
+          "mappings": {
+            "date": "date",
+            "store_id": "store_id",
+            "sku_id": "sku_id",
+            "units_sold": "units_sold",
+            "updated_at": "CURRENT_TIMESTAMP"
+          },
+          "operation_on_conflict": "replace",
+          "batch_size": "{{BATCH_SIZE}}",
+          "maximum_timeout": 120000
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_lookupSkus_to_prepare_upsert"],
+      "outgoingPorts": ["out_upsertSales_to_generate_pairs"]
+    },
+
+    {
+      "id": "generateStoreDatePairs",
+      "type": "normal",
+      "position": { "x": 2100, "y": 120 },
+      "data": {
+        "type": "functionActivity",
+        "name": "Generate unique (date, store_id) pairs",
+        "properties": {
+          "language": "javascript",
+          "func": "// input: rows (the batch inserted)\n// output: array of {date, store_id}\nlet rows = input || [];\nlet pairs = {};\nfor (let r of rows) {\n  if (!r.date || !r.store_id) continue;\n  let key = r.date + '||' + r.store_id;\n  if (!pairs[key]) pairs[key] = { date: r.date, store_id: r.store_id };\n}\nreturn Object.values(pairs);\n",
+          "integration_slug": "blt-int.function",
+          "maximum_timeout": 60000
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_upsertSales_to_generate_pairs"],
+      "outgoingPorts": ["out_pairs_to_loop"]
+    },
+
+    {
+      "id": "loopStoreDate",
+      "type": "normal",
+      "position": { "x": 2380, "y": 120 },
+      "data": {
+        "type": "loop",
+        "name": "Loop store/date pairs",
+        "properties": {
+          "integration_slug": "blt-int.loop",
+          "items_expr": "{{pairs}}",
+          "concurrency": 5
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_pairs_to_loop"],
+      "outgoingPorts": ["out_loop_to_weather", "out_loop_to_holidays"]
+    },
+
+    {
+      "id": "httpWeather",
+      "type": "normal",
+      "position": { "x": 2660, "y": 60 },
+      "data": {
+        "type": "http_request",
+        "name": "Call Weather API",
+        "properties": {
+          "integration_slug": "blt-int.http-request",
+          "method": "GET",
+          "url": "{{WEATHER_API_URL}}?q={{store_city}}&units=metric&appid={{WEATHER_API_KEY_SECRET}}",
+          "headers": {},
+          "timeout": 10000,
+          "parse_json": true,
+          "mapping_script": "// map OpenWeather response to weather_code and temp\nlet resp = input; // http response\nlet weather = 'OTHER';\ntry {\n  let main = resp.list && resp.list[0] && resp.list[0].weather && resp.list[0].weather[0] && resp.list[0].weather[0].main;\n  let temp = resp.list && resp.list[0] && resp.list[0].main && resp.list[0].main.temp;\n  if (main) main = main.toLowerCase();\n  if (main && (main.includes('rain') || main.includes('drizzle'))) weather = 'RAIN';\n  else if (main && main.includes('clear')) weather = 'SUNNY';\n  else if (main && main.includes('cloud')) weather = 'CLOUDY';\n  else if (main && main.includes('snow')) weather = 'SNOW';\n  if (temp && temp > 35) weather = 'HOT';\n} catch(e) { weather = 'OTHER'; }\nreturn { weather_code: weather, raw_weather: resp };\n"
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_loop_to_weather"],
+      "outgoingPorts": ["out_weather_to_compose"]
+    },
+
+    {
+      "id": "readHolidays",
+      "type": "normal",
+      "position": { "x": 2660, "y": 180 },
+      "data": {
+        "type": "readSheet",
+        "name": "Read Holidays & Promos",
+        "properties": {
+          "integration_slug": "blt-int.read-sheet",
+          "sheet_id_secret": "{{HOLIDAYS_SHEET_ID}}",
+          "sheet_range": "Holidays!A:C",
+          "header_row": true,
+          "maximum_timeout": 60000
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_loop_to_holidays"],
+      "outgoingPorts": ["out_holidays_to_compose"]
+    },
+
+    {
+      "id": "composeExternalSignals",
+      "type": "normal",
+      "position": { "x": 2940, "y": 120 },
+      "data": {
+        "type": "functionActivity",
+        "name": "Compose external_signals row",
+        "properties": {
+          "language": "javascript",
+          "func": "// input variables: item (date, store_id), weather (weather_code), holidays (array from sheet)\nlet item = input.item || {};\nlet weather = input.weather || {};\nlet holidays = input.holidays || [];\nlet date = item.date;\nlet store = item.store_id;\nlet is_holiday = 0;\nlet promotion_flag = 0;\n// simple lookup in holidays sheet: assume holidays rows have date and is_holiday and promo_flag\nfor (let h of holidays) {\n  if (!h.date) continue;\n  if (h.date === date && (!h.region || h.region === '' || h.region === item.region)) {\n    is_holiday = Number(h.is_holiday || 0);\n    promotion_flag = Number(h.promotion_flag || 0);\n    break;\n  }\n}\nlet weather_code = (weather.weather_code || 'OTHER');\nreturn { date: date, store_id: store, weather_code: weather_code, is_holiday: Number(is_holiday), promotion_flag: Number(promotion_flag) };\n",
+          "integration_slug": "blt-int.function",
+          "maximum_timeout": 60000
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_weather_to_compose", "in_holidays_to_compose"],
+      "outgoingPorts": ["out_compose_to_upsertExternal"]
+    },
+
+    {
+      "id": "tablesUpsertExternal",
+      "type": "normal",
+      "position": { "x": 3220, "y": 120 },
+      "data": {
+        "type": "tables_upsert",
+        "name": "Upsert into external_signals",
+        "properties": {
+          "integration_slug": "blt-int.tables",
+          "table": "external_signals",
+          "mode": "upsert",
+          "conflict_keys": ["date", "store_id"],
+          "mappings": {
+            "date": "date",
+            "store_id": "store_id",
+            "weather_code": "weather_code",
+            "is_holiday": "is_holiday",
+            "promotion_flag": "promotion_flag"
+          },
+          "operation_on_conflict": "replace",
+          "batch_size": 200,
+          "maximum_timeout": 120000
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_compose_to_upsertExternal"],
+      "outgoingPorts": ["out_upsertExternal_to_verification"]
+    },
+
+    {
+      "id": "verificationQueries",
+      "type": "normal",
+      "position": { "x": 3500, "y": 120 },
+      "data": {
+        "type": "tables_query",
+        "name": "Verification & Counts",
+        "properties": {
+          "integration_slug": "blt-int.tables",
+          "queries": [
+            {
+              "name": "sales_count_yesterday",
+              "sql": "SELECT COUNT(*) as cnt FROM sales_history WHERE date = CURRENT_DATE - INTERVAL '1 day';"
+            },
+            {
+              "name": "external_signals_count_today",
+              "sql": "SELECT COUNT(*) as cnt FROM external_signals WHERE date = CURRENT_DATE;"
+            }
+          ],
+          "maximum_timeout": 60000
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_upsertExternal_to_verification"],
+      "outgoingPorts": ["out_verification_to_notify"]
+    },
+
+    {
+      "id": "notifySlack",
+      "type": "normal",
+      "position": { "x": 3780, "y": 120 },
+      "data": {
+        "type": "slack",
+        "name": "Notify Slack / Email",
+        "properties": {
+          "integration_slug": "blt-int.slack",
+          "channel": "#data-pipelines",
+          "message_template": "Sales signals sync completed. sales_count_yesterday={{sales_count_yesterday.cnt}} external_signals_count_today={{external_signals_count_today.cnt}}. Check staging_errors sheet for bad rows.",
+          "email_notification": {
+            "integration_slug": "blt-int.email",
+            "to": ["data-team@example.com"],
+            "subject": "A_sales_signals_sync run summary",
+            "body": "Sales signals sync completed. sales_count_yesterday={{sales_count_yesterday.cnt}} external_signals_count_today={{external_signals_count_today.cnt}}.\nErrors (if any) saved in staging_errors sheet."
+          }
+        },
+        "blt_node_states": { "node": "not-configured-yet" }
+      },
+      "incomingPorts": ["in_verification_to_notify"],
+      "outgoingPorts": ["out_notify_to_end"]
+    }
+  ],
+  "edges": [
+    {
+      "source": "scheduleWorkflow1",
+      "target": "readSource1",
+      "id": "e1",
+      "metadata": {
+        "port": "out_schedule_to_source",
+        "in_port": "in_schedule_to_source"
+      }
+    },
+    {
+      "source": "readSource1",
+      "target": "mapper_normalize",
+      "id": "e2",
+      "metadata": {
+        "port": "out_source_to_mapper",
+        "in_port": "in_source_to_mapper"
+      }
+    },
+    {
+      "source": "mapper_normalize",
+      "target": "splitCleanBad",
+      "id": "e3",
+      "metadata": {
+        "port": "out_mapper_to_split",
+        "in_port": "in_mapper_to_split"
+      }
+    },
+    {
+      "source": "splitCleanBad",
+      "target": "lookupStores",
+      "id": "e4",
+      "metadata": {
+        "port": "out_split_to_lookup_valid",
+        "in_port": "in_split_to_lookup_valid"
+      }
+    },
+    {
+      "source": "splitCleanBad",
+      "target": "stagingErrorsSheet",
+      "id": "e5",
+      "metadata": {
+        "port": "out_split_to_errors",
+        "in_port": "in_split_to_errors"
+      }
+    },
+    {
+      "source": "lookupStores",
+      "target": "lookupSkus",
+      "id": "e6",
+      "metadata": {
+        "port": "out_lookupStores_to_lookupSkus",
+        "in_port": "in_lookupStores_to_lookupSkus"
+      }
+    },
+    {
+      "source": "lookupStores",
+      "target": "badKeysToErrors",
+      "id": "e7",
+      "metadata": {
+        "port": "out_lookupStores_to_badStores",
+        "in_port": "in_lookupStores_to_badStores"
+      }
+    },
+    {
+      "source": "lookupSkus",
+      "target": "tablesUpsertSales",
+      "id": "e8",
+      "metadata": {
+        "port": "out_lookupSkus_to_prepare_upsert",
+        "in_port": "in_lookupSkus_to_prepare_upsert"
+      }
+    },
+    {
+      "source": "lookupSkus",
+      "target": "badKeysToErrors",
+      "id": "e9",
+      "metadata": {
+        "port": "out_lookupSkus_to_badSkus",
+        "in_port": "in_lookupSkus_to_badSkus"
+      }
+    },
+    {
+      "source": "tablesUpsertSales",
+      "target": "generateStoreDatePairs",
+      "id": "e10",
+      "metadata": {
+        "port": "out_upsertSales_to_generate_pairs",
+        "in_port": "in_upsertSales_to_generate_pairs"
+      }
+    },
+    {
+      "source": "generateStoreDatePairs",
+      "target": "loopStoreDate",
+      "id": "e11",
+      "metadata": { "port": "out_pairs_to_loop", "in_port": "in_pairs_to_loop" }
+    },
+    {
+      "source": "loopStoreDate",
+      "target": "httpWeather",
+      "id": "e12",
+      "metadata": {
+        "port": "out_loop_to_weather",
+        "in_port": "in_loop_to_weather"
+      }
+    },
+    {
+      "source": "loopStoreDate",
+      "target": "readHolidays",
+      "id": "e13",
+      "metadata": {
+        "port": "out_loop_to_holidays",
+        "in_port": "in_loop_to_holidays"
+      }
+    },
+    {
+      "source": "httpWeather",
+      "target": "composeExternalSignals",
+      "id": "e14",
+      "metadata": {
+        "port": "out_weather_to_compose",
+        "in_port": "in_weather_to_compose"
+      }
+    },
+    {
+      "source": "readHolidays",
+      "target": "composeExternalSignals",
+      "id": "e15",
+      "metadata": {
+        "port": "out_holidays_to_compose",
+        "in_port": "in_holidays_to_compose"
+      }
+    },
+    {
+      "source": "composeExternalSignals",
+      "target": "tablesUpsertExternal",
+      "id": "e16",
+      "metadata": {
+        "port": "out_compose_to_upsertExternal",
+        "in_port": "in_compose_to_upsertExternal"
+      }
+    },
+    {
+      "source": "tablesUpsertExternal",
+      "target": "verificationQueries",
+      "id": "e17",
+      "metadata": {
+        "port": "out_upsertExternal_to_verification",
+        "in_port": "in_upsertExternal_to_verification"
+      }
+    },
+    {
+      "source": "verificationQueries",
+      "target": "notifySlack",
+      "id": "e18",
+      "metadata": {
+        "port": "out_verification_to_notify",
+        "in_port": "in_verification_to_notify"
+      }
+    }
+  ]
+}
