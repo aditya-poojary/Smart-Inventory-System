@@ -1,10 +1,11 @@
 const axios = require('axios');
+require('dotenv').config();
 
 // Fynd Platform API Configuration
-const ORGANIZATION_ID = '693b1bd8a4a63a19778206c6';
-const COMPANY_ID = 12569;
-const API_BASE = 'https://api.fynd.com';
-const AUTH_TOKEN = 'pr-da519b3fba4d54d15dea5d06098ffa723fcf8340'; // From debug logs
+const ORGANIZATION_ID = process.env.FYND_ORGANIZATION_ID;
+const COMPANY_ID = process.env.FYND_COMPANY_ID;
+const API_BASE = process.env.FYND_API_BASE || 'https://api.fynd.com';
+const AUTH_TOKEN = process.env.FYND_AUTH_TOKEN;
 
 // Product data based on your inventory system
 const products = [

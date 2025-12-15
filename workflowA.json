@@ -9,7 +9,7 @@
   "parent_id": "",
   "global_variables": {
     "TIMEZONE": "Asia/Kolkata",
-    "WEATHER_API_KEY_SECRET": "09ad74212e5143354ce5b5c289bfa15d",
+    "WEATHER_API_KEY_SECRET": "USE_ENV_FILE",
     "WEATHER_API_URL": "https://api.openweathermap.org/data/2.5/forecast",
     "HOLIDAYS_SHEET_ID": "secrets:HOLIDAYS_SHEET_ID",
     "PROMOS_SHEET_ID": "secrets:PROMOS_SHEET_ID",
