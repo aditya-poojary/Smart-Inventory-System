@@ -11,7 +11,7 @@ interface SalesEntry {
 }
 
 const BOLTIC_API_URL =
-  "https://asia-south1.workflow.boltic.app/d5ef14c1-6dff-4e31-b24f-d05eb570a8b4/newsales";
+  "https://asia-south1.workflow.boltic.app/8d321f41-0f56-44e7-b790-db8f2fa0dba1/newsales";
 
 export default function ManualEntryPage() {
   const [entries, setEntries] = useState<SalesEntry[]>([

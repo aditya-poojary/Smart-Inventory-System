@@ -30,11 +30,14 @@ The React form now sends data optimized for **Boltic Loop activity**:
 ## 🔄 Boltic Workflow Configuration
 
 ### **Node 1: HTTP Trigger**
+
 - Receives the payload from React form
 - Test payload should match above format
 
 ### **Node 2: Loop Activity** (NEW!)
+
 **Configuration:**
+
 - **Loop Input**: `{{payload.sales}}`
 - **Iterate over**: Array of sales entries
 - Inside loop, access current item with `{{value}}`
@@ -42,6 +45,7 @@ The React form now sends data optimized for **Boltic Loop activity**:
 ### **Inside Loop - Process Each Sale:**
 
 #### **Step 1: Boltic Table (sales_history)**
+
 - **Table**: `sales_history`
 - **Event**: `create_record`
 - **Payload mapping**:
@@ -55,10 +59,11 @@ The React form now sends data optimized for **Boltic Loop activity**:
   ```
 
 #### **Step 2: Extract City Name (Function)**
+
 - **Input**: `{{value.store_id}}`
-- **Function**: 
+- **Function**:
   ```javascript
-  const parts = city.split('_');
+  const parts = city.split("_");
   if (parts.length > 1) {
     return parts[1]; // Returns "DELHI" from "STORE_DELHI_NCR_01"
   }
@@ -66,11 +71,13 @@ The React form now sends data optimized for **Boltic Loop activity**:
   ```
 
 #### **Step 3: Weather API Call**
+
 - **Endpoint**: `https://api.openweathermap.org/data/2.5/forecast?q={{city_name.result}}&units=metric&appid={{global_variables.OpenWeatherMap}}`
 - **Method**: GET
 
 #### **Step 4: Weather Cleaning (Function)**
-- **Input**: 
+
+- **Input**:
   ```json
   {
     "item": "{{value}}",
@@ -80,7 +87,8 @@ The React form now sends data optimized for **Boltic Loop activity**:
 - **Returns**: `{ weather_code, temp_max }`
 
 #### **Step 5: Holiday/Promotion Check (Function)**
-- **Input**: 
+
+- **Input**:
   ```json
   {
     "result": "{{cleaning.result}}",
@@ -91,6 +99,7 @@ The React form now sends data optimized for **Boltic Loop activity**:
 - **Returns**: `{ weather_code, is_holiday, promotion_flag }`
 
 #### **Step 6: Boltic Table (external_signals)**
+
 - **Table**: `external_signals`
 - **Event**: `create_record`
 - **Payload mapping**:
@@ -109,21 +118,25 @@ The React form now sends data optimized for **Boltic Loop activity**:
 ## 🎯 Benefits of Loop Approach
 
 ### **1. Bulk Processing**
+
 - Submit 10 sales entries → Loop processes all 10
 - Each entry gets enriched with weather + holiday data
 - All stored in database automatically
 
 ### **2. Atomic Operations**
+
 - Each iteration is independent
 - If one fails, others continue (with `continue_on_failure: true`)
 - Error logging per entry
 
 ### **3. Scalability**
+
 - Handle 1 entry or 100 entries with same workflow
 - No code changes needed
 - Performance: ~2 seconds per entry
 
 ### **4. Simplified Frontend**
+
 - React form just sends array
 - No complex batching logic
 - User can add unlimited entries
@@ -136,7 +149,7 @@ The React form now sends data optimized for **Boltic Loop activity**:
 
 ```
 Entry 1: Delhi NCR, Coca-Cola, 15 units
-Entry 2: Mumbai, Lays Chips, 25 units  
+Entry 2: Mumbai, Lays Chips, 25 units
 Entry 3: Pune, Maggi Noodles, 30 units
 ```
 
@@ -197,6 +210,7 @@ Loop Activity ← Loop Input: {{payload.sales}}
 ```
 
 ### **Inside Loop:**
+
 1. Boltic Table (sales_history) - using `{{value.*}}`
 2. Function (city_name) - using `{{value.store_id}}`
 3. API (weather_api) - using `{{city_name.result}}`
@@ -237,6 +251,7 @@ Loop Activity ← Loop Input: {{payload.sales}}
 ## 📝 React Form Changes
 
 **Before (Single entry format):**
+
 ```json
 {
   "0": { "date": "...", ... }
@@ -244,6 +259,7 @@ Loop Activity ← Loop Input: {{payload.sales}}
 ```
 
 **After (Loop-ready format):**
+
 ```json
 {
   "payload": {
@@ -262,6 +278,6 @@ Loop Activity ← Loop Input: {{payload.sales}}
 ✅ **Simplified workflow** - Same nodes for 1 or 100 entries  
 ✅ **Bulk processing** - Submit multiple sales at once  
 ✅ **Automatic enrichment** - Weather + holiday for each entry  
-✅ **Scalable** - Add more entries without code changes  
+✅ **Scalable** - Add more entries without code changes
 
 Your workflow is now **production-ready for bulk sales updates**! 🚀

@@ -3,8 +3,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   LayoutDashboard,
   Upload,
-  Package,
-  TrendingUp,
+  // Package,
+  // TrendingUp,
   Activity,
   Menu,
   X,
@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import Dashboard from "./pages/Dashboard";
 import IngestPage from "./pages/IngestPage";
-import InventoryPage from "./pages/InventoryPage";
-import ForecastsPage from "./pages/ForecastsPage";
+// import InventoryPage from "./pages/InventoryPage";
+// import ForecastsPage from "./pages/ForecastsPage";
 import ManualEntryPage from "./pages/ManualEntryPage";
 
 const queryClient = new QueryClient({
@@ -25,7 +25,7 @@ const queryClient = new QueryClient({
   },
 });
 
-type Page = "dashboard" | "ingest" | "manual-entry" | "inventory" | "forecasts";
+type Page = "dashboard" | "ingest" | "manual-entry"; // | "inventory" | "forecasts";
 
 interface NavItem {
   id: Page;
@@ -37,8 +37,8 @@ const navItems: NavItem[] = [
   { id: "dashboard", label: "Dashboard", icon: <LayoutDashboard size={20} /> },
   { id: "ingest", label: "Upload CSV", icon: <Upload size={20} /> },
   { id: "manual-entry", label: "Manual Entry", icon: <Edit size={20} /> },
-  { id: "inventory", label: "Inventory", icon: <Package size={20} /> },
-  { id: "forecasts", label: "Forecasts", icon: <TrendingUp size={20} /> },
+  // { id: "inventory", label: "Inventory", icon: <Package size={20} /> },
+  // { id: "forecasts", label: "Forecasts", icon: <TrendingUp size={20} /> },
 ];
 
 function App() {
@@ -53,10 +53,10 @@ function App() {
         return <IngestPage />;
       case "manual-entry":
         return <ManualEntryPage />;
-      case "inventory":
-        return <InventoryPage />;
-      case "forecasts":
-        return <ForecastsPage />;
+      // case "inventory":
+      //   return <InventoryPage />;
+      // case "forecasts":
+      //   return <ForecastsPage />;
       default:
         return <Dashboard />;
     }
